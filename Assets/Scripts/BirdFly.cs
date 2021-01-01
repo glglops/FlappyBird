@@ -7,6 +7,7 @@ public class BirdFly : MonoBehaviour
 
     [SerializeField] float velocity = 1;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,10 @@ public class BirdFly : MonoBehaviour
         {
             rb.velocity = Vector2.up * velocity;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        gameManager.GameOver();
     }
 }
