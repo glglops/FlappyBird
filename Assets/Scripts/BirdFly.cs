@@ -20,8 +20,10 @@ public class BirdFly : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+
             rb.velocity = Vector2.up * velocity;
         }
+        transform.eulerAngles = new Vector3(0, 0, rb.velocity.y * 20f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
